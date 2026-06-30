@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<input type ="text" id ="calcDisplay" disabled ><br>
+<button onClick = "formatPati()">C</button>
+<button onClick = "vorTex('9')">9</button>   
+<button onClick = "vorTex('8')">8</button>  
+<button onClick = "vorTex('7')">7</button>
+<button onClick = "vorTex('+')">+</button><br>
+<button onClick = "vorTex('6')">6</button>
+<button onClick = "vorTex('5')">5</button>
+<button onClick = "vorTex('4')">4</button>
+<button onClick = "vorTex('*')">*</button><br>
+<button onClick = "vorTex('3')">3</button>
+<button onClick = "vorTex('2')">2</button>
+<button onClick = "vorTex('1')">1</button>
+<button onClick = "vorTex('-')">-</button><br>
+<button onClick = "vorTex('0')">0</button>
+<button onClick = "vorTex('.')">.</button>
+<button onClick = "tisoveZimenezi()">=</button>
+<button onClick = "vorTex('/')">/</button>
+
+<script>
+function vorTex(num){ 
+    const vorTexShow = document.getElementById('calcDisplay');
+vorTexShow.value += num;
+}
+
+function tisoveZimenezi(){
+const variabo = document.getElementById('calcDisplay');
+variabo.value = eval(variabo.value);
+
+}
+
+
+
+function formatPati(){
+    const variabro = document.getElementById('calcDisplay');
+    variabro.value = '';
+}
+</script>
+
+
+</body>
+</html>
+    
