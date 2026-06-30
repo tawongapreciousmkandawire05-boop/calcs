@@ -21,17 +21,13 @@
 <button onClick = "vorTex('.')">.</button>
 <button onClick = "tisoveZimenezi()">=</button><br>
 <button onClick = "vorTex('/')">/</button>
-<button onClick = "vorTex('sqrt')">√</button>
-<button onClick = "vorTex('sin')">sin</button>
-<button onClick = "vorTex('cos')">cos</button><br>
-<button onClick = "vorTex('tan')">tan</button>
+<button onClick = "vorTex('Math.sqrt')">√</button>
+<button onClick = "vorTex('Math.sin')">sin</button>
+<button onClick = "vorTex('Math.cos')">cos</button><br>
+<button onClick = "vorTex('Math.tan')">tan</button>
 <button onClick = "vorTex('(')">(</button>
 <button onClick = "vorTex(')')">)</button>
 <button onClick = "vorTex('**')">xʸ</button><br>
-<button onClick = "vorTex('%')">%</button>
-<button onClick = "vorTex('Math.PI')">π</button>
-<button onClick = "vorTex('Math.E')">e</button>
-<button onClick = "vorTex('^')">^</button><br>
 <script>
 function vorTex(num){ 
     const vorTexShow = document.getElementById('calcDisplay');
@@ -41,6 +37,19 @@ vorTexShow.value += num;
 function tisoveZimenezi(){
 const variabo = document.getElementById('calcDisplay');
 variabo.value = eval(variabo.value);
+
+expression = expression.replace(/Math\.sqrt/g, 'Math.sqrt');
+expression = expression.replace(/Math\.sin/g, 'Math.sin');
+expression = expression.replace(/Math\.cos/g, 'Math.cos');
+expression = expression.replace(/Math\.tan/g, 'Math.tan');
+
+try {
+    display.value = eval(expression);
+} catch (error) {
+    display.value = 'Error';
+
+}
+
 
 }
 
